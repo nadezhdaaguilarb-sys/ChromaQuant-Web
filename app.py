@@ -1,4 +1,5 @@
 import streamlit as st
+import json
 import cv2
 import numpy as np
 from PIL import Image
@@ -13,7 +14,8 @@ from streamlit_drawable_canvas import st_canvas
 # 1. CONFIGURACIÓN DE FIREBASE
 # ==========================================
 if not firebase_admin._apps:
-    cred = credentials.Certificate("firebase_key.json")
+    key_dict = json.loads(st.secrets["text_key"])
+    cred = credentials.Certificate(key_dict)
     firebase_admin.initialize_app(cred)
 
 db = firestore.client()
