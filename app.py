@@ -131,7 +131,7 @@ def main_app():
         
         img_bgr_web = cv2.resize(img_bgr_original, (nw, nh))
         img_rgb_web = cv2.cvtColor(img_bgr_web, cv2.COLOR_BGR2RGB)
-        img_para_lienzo = Image.fromarray(img_rgb_web).convert("RGBA")
+        img_para_lienzo = Image.fromarray(img_rgb_web).convert("RGB")
         
         st.sidebar.markdown("---")
         st.sidebar.subheader("Herramientas ROI")
