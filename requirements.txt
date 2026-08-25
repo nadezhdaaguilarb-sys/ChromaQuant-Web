@@ -3,4 +3,4 @@ opencv-python-headless==4.9.0.80
 numpy==1.26.4
 Pillow
 firebase-admin==6.5.0
-streamlit-drawable-canvas
+streamlit-drawable-canvas-fix
