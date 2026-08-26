@@ -181,13 +181,15 @@ def main_app():
         with col2:
             st.write(f"**2. Resultado (Filtro: {color_ver})**")
             if color_ver == "todo":
-                st.image(img_rgb_web, use_column_width=True)
+                # st.image(img_rgb_web, use_column_width=True)
+                st.image(img_rgb_web, use_container_width=True)
             else:
                 mask_show_orig = masks_orig.get(color_ver)
                 # Reducir máscara solo para mostrarla en la pantalla
                 mask_show_web = cv2.resize(mask_show_orig, (nw, nh), interpolation=cv2.INTER_NEAREST)
                 proc_bgr_web = cv2.bitwise_and(img_bgr_web, img_bgr_web, mask=mask_show_web)
-                st.image(cv2.cvtColor(proc_bgr_web, cv2.COLOR_BGR2RGB), use_column_width=True)
+                # st.image(cv2.cvtColor(proc_bgr_web, cv2.COLOR_BGR2RGB), use_column_width=True)
+                st.image(cv2.cvtColor(proc_bgr_web, cv2.COLOR_BGR2RGB),use_container_width=True)
 
         # 4. Mostrar métricas (Basadas en la original)
         st.markdown("### Métricas de Segmentación (ROI actual)")
